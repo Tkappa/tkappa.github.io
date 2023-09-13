@@ -425,7 +425,7 @@
 	      pause: this.pause.bind(this),
 	      togglePlayback: this.togglePlayback.bind(this),
 	      paused: this.paused.bind(this),
-	      nextFrame: this.nextFrame.bind(this)
+	      nextFrame: this.nextFrame.bind(this),
 		  startFromZero: this.startFromZero.bind(this)
 	    };
 	  },
