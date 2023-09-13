@@ -426,6 +426,7 @@
 	      togglePlayback: this.togglePlayback.bind(this),
 	      paused: this.paused.bind(this),
 	      nextFrame: this.nextFrame.bind(this)
+		  startFromZero: this.startFromZero.bind(this)
 	    };
 	  },
 
@@ -471,7 +472,8 @@
 	   * @return {boolean}
 	   */
 	  paused: function paused() {
-	    return this.__paused;
+	    this.__paused = true;
+
 	  },
 
 
@@ -492,6 +494,17 @@
 	        this.__frameIdx = 0;
 	      }
 	    }
+	  },
+	  /**
+	   * Go to next frame
+	   * @public
+	   */
+	  startFromZero: function startFromZero() {
+		this.__paused = true;		
+		this.__frameIdx = 0;
+		this.__clearCanvas();
+	    this.__draw();
+		this.__paused = false;
 	  },
 
 
